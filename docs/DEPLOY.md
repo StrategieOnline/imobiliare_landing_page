@@ -82,3 +82,4 @@ build's `error.message` field say why.
 
 | date | main SHA | result |
 |---|---|---|
+| 2026-11-21 | `3aad08b` | scaffold only (empty shell, no team work yet). gh-pages `6fa2f56`; Pages build `built`, run 44842414284 success in ~24 s; page 200, `assets/index-aestKa_H.js` 200, `assets/index-DjaUIdEH.css` 200, `.nojekyll` 200. Pages-from-branch works in this org (Actions not refused). |
