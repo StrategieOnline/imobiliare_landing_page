@@ -1,0 +1,57 @@
+.gestures { overflow: hidden; }
+.gestures__lede { max-width: 30ch; margin: 32px 0 0; font-size: 16px; line-height: 1.55; color: var(--ink-muted); }
+.gestures__hint { margin: 40px 0 0; color: var(--ink-muted); display: flex; gap: .8em; }
+.gestures__hint span { display: inline-block; animation: g-nudge 1.8s var(--ease-out) infinite; }
+@media (max-width: 767px), (prefers-reduced-motion: reduce) { .gestures__hint { display: none; } }
+@keyframes g-nudge { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(8px); } }
+
+.gcard__num {
+  display: block;
+  font-family: var(--f-display); font-weight: 800; letter-spacing: -.04em; line-height: .8;
+  font-size: clamp(110px, 15vw, 290px);
+  color: var(--paper); -webkit-text-stroke: 2px var(--ink); paint-order: stroke fill;
+  pointer-events: none; will-change: transform;
+}
+.gcard__title {
+  margin: 0; font-family: var(--f-display); font-weight: 700; letter-spacing: -.01em;
+  font-size: clamp(26px, 2.6vw, 46px); line-height: 1;
+}
+.gcard__idx { vertical-align: middle; color: var(--ink-muted); margin-right: .4em; }
+.gcard__text { margin: 18px 0 0; max-width: 34ch; font-size: 16px; line-height: 1.55; color: var(--ink-muted); }
+.gcard__media { position: relative; z-index: 1; }
+.gcard__img { inset: -6% -10%; width: 120%; max-width: none; height: 112%; will-change: transform; }
+
+/* Desktop: one horizontal strip, pinned */
+@media (min-width: 768px) {
+  .gestures { padding: 0; }
+  .gestures__track {
+    display: flex; align-items: center; gap: 9vw;
+    width: max-content; height: 100vh; min-height: 640px;
+    padding: 0 12vw 0 var(--gutter);
+  }
+  .gestures__intro { flex: none; width: min(44vw, 760px); padding-top: 4vh; }
+  .gcard { flex: none; display: flex; align-items: flex-end; gap: 3.2vw; }
+  .gcard__media { flex: none; }
+  .gcard__ph { aspect-ratio: auto; }
+  .gcard--01 .gcard__ph { width: 31vw; height: 72vh; }
+  .gcard--02 { align-self: flex-start; margin-top: 15vh; }
+  .gcard--02 .gcard__ph { width: 44vw; height: 52vh; }
+  .gcard--03 .gcard__ph { width: 33vw; height: 66vh; }
+  .gcard__body { width: clamp(260px, 22vw, 420px); padding-bottom: 2vh; }
+  .gcard__num { margin: 0 0 3vh -0.04em; }
+}
+
+/* Mobile and reduced motion: vertical stack, no pin */
+@media (max-width: 767px) {
+  .gestures__intro { margin-bottom: 64px; }
+  .gcard + .gcard { margin-top: 88px; }
+  .gcard__body { position: relative; margin-top: -0.5em; }
+  .gcard__num { font-size: 30vw; margin-bottom: 12px; }
+}
+@media (min-width: 768px) and (prefers-reduced-motion: reduce) {
+  .gestures { padding: var(--sec-pad) var(--gutter); }
+  .gestures__track { display: block; width: auto; height: auto; padding: 0; }
+  .gestures__intro { width: auto; margin-bottom: 96px; }
+  .gcard { margin-bottom: 120px; }
+  .gcard--02 { margin-top: 0; }
+}

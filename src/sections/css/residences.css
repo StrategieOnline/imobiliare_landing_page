@@ -1,0 +1,58 @@
+.residences__head {
+  display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 40px;
+  margin-bottom: clamp(64px, 10vh, 128px);
+}
+.residences__note { margin: 0 0 .6em; max-width: 30ch; color: var(--cream); line-height: 1.7; text-align: right; }
+.residences__note span { color: var(--muted); text-transform: none; letter-spacing: .02em; }
+
+.rlist { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--line); }
+.rrow { border-top: 1px solid var(--line); }
+.rrow__link {
+  display: grid; grid-template-columns: 5ch minmax(0, 1fr) auto 40px; align-items: center; gap: 24px;
+  padding: clamp(22px, 3.4vh, 40px) 0;
+  transition: opacity .5s var(--ease-out);   /* on the link, not .rrow: GSAP tweens .rrow opacity */
+}
+.rrow__n { color: var(--muted); }
+.rrow__name {
+  font-family: var(--f-display); font-weight: 700; letter-spacing: -.02em; line-height: .95;
+  font-size: clamp(30px, 5vw, 96px);
+  color: var(--cream);
+  transition: color .45s var(--ease-out), transform .6s var(--ease-out);
+}
+.rrow__specs { color: var(--muted); text-align: right; white-space: nowrap; }
+.rrow__specs i { font-style: normal; margin: 0 .7em; color: var(--gold); }
+.rrow__arrow {
+  justify-self: end; font-size: 22px; line-height: 1; color: var(--gold);
+  transition: transform .5s var(--ease-out);
+}
+.rrow__inline { display: none; }
+
+@media (hover: hover) and (pointer: fine) {
+  .rrow__name { color: var(--ink); -webkit-text-stroke: 2px var(--cream); paint-order: stroke fill; }
+  .rrow.is-active .rrow__name { color: var(--cream); transform: translateX(1.2vw); }
+  .rrow.is-active .rrow__arrow { transform: translate(4px, -4px) rotate(45deg); }
+  .rlist.has-active .rrow:not(.is-active) .rrow__link { opacity: .35; }
+}
+
+/* Touch: the preview becomes an inline image under each row */
+@media (hover: none), (pointer: coarse) {
+  .rrow__inline { display: block; margin: 0 0 28px; --ar: 5/4 !important; }
+}
+
+.rpreview {
+  position: fixed; left: 0; top: 0; z-index: 90; pointer-events: none;
+  width: clamp(220px, 19vw, 340px); aspect-ratio: 4 / 5;
+  margin: calc(clamp(220px, 19vw, 340px) * -0.625) 0 0 calc(clamp(220px, 19vw, 340px) * -0.5);
+  visibility: hidden; opacity: 0;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .45);
+}
+.rpreview__layer { position: absolute; inset: 0; aspect-ratio: auto; clip-path: inset(0 0 100% 0); }
+
+@media (max-width: 960px) {
+  .residences__head { grid-template-columns: 1fr; }
+  .residences__note { text-align: left; }
+  .rrow__link { grid-template-columns: 4ch minmax(0, 1fr) 24px; gap: 10px 14px; }
+  .rrow__name { font-size: clamp(24px, 7vw, 56px); }
+  .rrow__specs { grid-column: 2 / 4; grid-row: 2; text-align: left; white-space: normal; }
+  .rrow__arrow { grid-column: 3; grid-row: 1; }
+}

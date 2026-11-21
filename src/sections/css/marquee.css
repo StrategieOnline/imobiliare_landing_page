@@ -1,0 +1,23 @@
+.marquee {
+  position: relative; overflow: hidden;
+  padding: clamp(20px, 3vh, 40px) 0 clamp(40px, 7vh, 88px);
+  background: var(--ink); color: var(--cream);
+  border-top: 1px solid var(--line);
+}
+.marquee__row { display: flex; white-space: nowrap; }
+.marquee__row + .marquee__row { margin-top: -.02em; }
+.marquee__track { display: flex; will-change: transform; }
+.marquee__group { display: flex; align-items: center; flex: none; }
+.marquee__word {
+  font-family: var(--f-display); font-weight: 800; letter-spacing: -.02em; line-height: 1;
+  font-size: clamp(56px, 10.5vw, 200px); padding: .04em 0;
+}
+.marquee__row:nth-child(2) .marquee__word { font-size: clamp(40px, 7vw, 132px); }
+/* Unbounded is a variable font with overlapping contours: a bg-coloured fill painted over a
+   double-width stroke hides the internal seams a plain text-stroke would show */
+.marquee__word.is-outline { color: var(--ink); -webkit-text-stroke: 2.4px var(--cream); paint-order: stroke fill; }
+.marquee__star { color: var(--gold); font-size: clamp(24px, 3.6vw, 64px); margin: 0 .55em; line-height: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { transform: translateX(-12%); }
+}

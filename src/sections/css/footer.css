@@ -1,0 +1,32 @@
+.foot {
+  position: relative; overflow: hidden;
+  background: var(--ink); color: var(--cream);
+  border-top: 1px solid var(--line);
+}
+.foot__top {
+  display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap;
+  padding: 40px var(--gutter) 0;
+}
+.foot__nav { display: flex; flex-wrap: wrap; gap: 12px clamp(16px, 2.4vw, 36px); }
+.foot__nav a, .foot__up { color: var(--muted); transition: color .3s; }
+.foot__nav a:hover, .foot__up:hover { color: var(--cream); }
+.foot__up { background: none; border: 0; padding: 0; cursor: pointer; font-family: var(--f-mono); }
+.foot__up span { display: inline-block; margin-left: .4em; color: var(--gold); transition: transform .5s var(--ease-out); }
+.foot__up:hover span { transform: translateY(-4px); }
+
+.foot__meta {
+  display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap;
+  padding: 28px var(--gutter) clamp(48px, 8vh, 96px);
+}
+.foot__legal { max-width: 62ch; margin: 0; font-size: 13px; line-height: 1.55; color: var(--muted); }
+.foot__copy { margin: 0; color: var(--muted); }
+
+.foot__mark { overflow: hidden; display: flex; justify-content: center; }
+.foot__word {
+  display: block; flex: none;
+  font-family: var(--f-display); font-weight: 800; letter-spacing: -.03em; line-height: .78;
+  font-size: 18vw; color: var(--cream);
+  padding-top: .1em;          /* headroom so the mask clips only the bottom */
+  margin-bottom: -.13em;     /* the bottom edge of the page cuts the letters */
+  will-change: transform;
+}
