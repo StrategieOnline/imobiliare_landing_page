@@ -17,18 +17,20 @@ npm run deploy      # = bash tools/deploy.sh
 
 `tools/deploy.sh` (`set -euo pipefail`, no secrets, safe to re-run):
 
-1. `npm ci` (or `npm i` when there is no lockfile)
-2. `rm -rf dist && npx vite build`
+1. checks out the committed `HEAD` into a throwaway `git worktree` (so it ships exactly what is
+   committed, and never touches the shared `node_modules/` other teams use). **Uncommitted
+   changes are not deployed**; the script prints a note if there are any.
+2. `npm ci` there (or `npm i` when there is no lockfile), then `npx vite build`
 3. checks: `dist/index.html` exists; no root-absolute `src="/…"` / `href="/…"` in it and no
    `url(/…)` in built CSS (the site lives under `/imobiliare_landing_page/`); nothing from
    `reference/` inside `dist/`
 4. adds `dist/.nojekyll` (so Pages serves files as-is, with no Jekyll pass)
-5. copies `dist/` to a temp dir, makes one orphan commit there and runs
-   `git push -f <origin> HEAD:gh-pages`. `gh-pages` keeps no history; each deploy replaces it.
-   The commit message records the `main` SHA it was built from.
-6. prints the Pages URL
+5. makes one orphan commit of `dist/` and runs `git push -f <origin> HEAD:gh-pages`.
+   `gh-pages` keeps no history; each deploy replaces it. The commit message records the `main`
+   SHA it was built from.
+6. removes the worktree and prints the Pages URL
 
-Deploy from a clean, committed `main` so the recorded SHA matches what is live.
+Commit and push `main` first, then deploy.
 
 ## One-time Pages setup (done)
 
