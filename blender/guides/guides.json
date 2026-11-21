@@ -1,0 +1,545 @@
+{
+  "version": "v2",
+  "fps": 24,
+  "resolution": [
+    1280,
+    720
+  ],
+  "lens_mm": 28.0,
+  "sensor_mm": 36,
+  "total_frames": 816,
+  "total_s": 34.0,
+  "overlap_frames": 12,
+  "cuts": [
+    {
+      "frame": 121,
+      "time_s": 5.0,
+      "note": "S1 -> S2: same camera; guides share frames 121-132"
+    },
+    {
+      "frame": 289,
+      "time_s": 12.0,
+      "note": "S2 -> S3: same camera; guides share frames 289-300"
+    },
+    {
+      "frame": 457,
+      "time_s": 19.0,
+      "note": "S3 -> S4: same camera; guides share frames 457-468"
+    },
+    {
+      "frame": 577,
+      "time_s": 24.0,
+      "note": "S4 -> S5: same camera; guides share frames 577-588"
+    },
+    {
+      "frame": 697,
+      "time_s": 29.0,
+      "note": "S5 -> S6: same camera; guides share frames 697-708"
+    }
+  ],
+  "shots": [
+    {
+      "shot": "S1",
+      "nominal_frames": [
+        1,
+        120
+      ],
+      "rendered_frames": [
+        1,
+        132
+      ],
+      "file": "S1.mp4",
+      "frames": 132,
+      "duration_s": 5.5,
+      "nominal_duration_s": 5,
+      "camera": "RISE: eye height (1.7 m) on a 24 m rooftop terrace 340 m west of the plot; rises over the travertine parapet between the olive planters and tilts down to the empty plot.",
+      "camera_start_m": [
+        -331.33,
+        -10.77,
+        25.7
+      ],
+      "camera_end_m": [
+        -316.78,
+        -11.25,
+        29.52
+      ]
+    },
+    {
+      "shot": "S2",
+      "nominal_frames": [
+        121,
+        288
+      ],
+      "rendered_frames": [
+        121,
+        300
+      ],
+      "file": "S2.mp4",
+      "frames": 180,
+      "duration_s": 7.5,
+      "nominal_duration_s": 7,
+      "camera": "STACK: drone push toward the plot on a gentle arc while the tower stacks floor by floor (podium, 24 storeys growing up from the one below, glass trailing ~3 storeys, crown last). The travertine band faces the camera at ~50 deg (3/4, east face visible).",
+      "camera_start_m": [
+        -322.56,
+        -11.0,
+        29.04
+      ],
+      "camera_end_m": [
+        -180.94,
+        -3.28,
+        38.48
+      ]
+    },
+    {
+      "shot": "S3",
+      "nominal_frames": [
+        289,
+        456
+      ],
+      "rendered_frames": [
+        289,
+        468
+      ],
+      "file": "S3.mp4",
+      "frames": 180,
+      "duration_s": 7.5,
+      "nominal_duration_s": 7,
+      "camera": "ORBIT: ~60 deg clockwise round the finished tower, closing from 185 m to 87 m and rising to loggia height (58.5 m), lake behind; ends 20 deg off the loggia axis, framed on the band.",
+      "camera_start_m": [
+        -183.73,
+        -14.19,
+        38.06
+      ],
+      "camera_end_m": [
+        -44.49,
+        65.06,
+        58.56
+      ]
+    },
+    {
+      "shot": "S4",
+      "nominal_frames": [
+        457,
+        576
+      ],
+      "rendered_frames": [
+        457,
+        588
+      ],
+      "file": "S4.mp4",
+      "frames": 132,
+      "duration_s": 5.5,
+      "nominal_duration_s": 5,
+      "camera": "APPROACH: straight dolly toward Loggia_14 (storey 15) until the loggia fills the frame, finishing on its axis 4.4 m out.",
+      "camera_start_m": [
+        -48.57,
+        71.27,
+        58.46
+      ],
+      "camera_end_m": [
+        -16.43,
+        1.13,
+        58.55
+      ]
+    },
+    {
+      "shot": "S5",
+      "nominal_frames": [
+        577,
+        696
+      ],
+      "rendered_frames": [
+        577,
+        708
+      ],
+      "file": "S5.mp4",
+      "frames": 132,
+      "duration_s": 5.5,
+      "nominal_duration_s": 5,
+      "camera": "THRESHOLD: through the open centre of the sliding glass into the living room.",
+      "camera_start_m": [
+        -17.72,
+        3.23,
+        58.55
+      ],
+      "camera_end_m": [
+        -9.65,
+        -4.6,
+        58.47
+      ]
+    },
+    {
+      "shot": "S6",
+      "nominal_frames": [
+        697,
+        816
+      ],
+      "rendered_frames": [
+        697,
+        816
+      ],
+      "file": "S6.mp4",
+      "frames": 120,
+      "duration_s": 5.0,
+      "nominal_duration_s": 5,
+      "camera": "DRIFT: slow lateral drift left across the living room (shelf wall, sofa, window right).",
+      "camera_start_m": [
+        -9.91,
+        -4.59,
+        58.47
+      ],
+      "camera_end_m": [
+        -8.51,
+        -2.75,
+        58.45
+      ]
+    }
+  ],
+  "world": {
+    "axes": "Blender: Z up, metres; tower at origin, yawed 224.5 deg so its front (travertine band, loggias) faces azimuth 134.5 deg (north-west); the band corner faces the S1/S2 camera",
+    "tower_yaw_deg": 224.5,
+    "site": "76 x 64 m concrete pad with a 2.4 m hoarding (gate on the tower's front) at grade",
+    "slabs": [
+      {
+        "centre": [
+          -111.0,
+          30.0
+        ],
+        "length_m": 60.0,
+        "depth_m": 12.0,
+        "height_m": 28.0,
+        "storeys": 10,
+        "long_axis": "y"
+      },
+      {
+        "centre": [
+          149.5,
+          -70.0
+        ],
+        "length_m": 66.0,
+        "depth_m": 12.0,
+        "height_m": 28.0,
+        "storeys": 10,
+        "long_axis": "y"
+      },
+      {
+        "centre": [
+          145.0,
+          122.0
+        ],
+        "length_m": 54.0,
+        "depth_m": 12.0,
+        "height_m": 28.0,
+        "storeys": 10,
+        "long_axis": "x"
+      }
+    ],
+    "tower": "round-2 ORIZONT tower (blender/build_tower.py): 28x20 m, podium 6 m, 24 storeys x 3.6 m, parapet 96 m",
+    "rooftop": {
+      "centre": [
+        -339.8,
+        -11.9
+      ],
+      "terrace_z": 24.0,
+      "distance_to_plot_m": 340.0,
+      "eye_height_m": 1.7
+    },
+    "loggia": "Loggia_14 (storey 15), floor at 56.95 m, camera eye 58.55 m",
+    "sun": {
+      "azimuth_deg": -52.0,
+      "elevation_deg": 5.1,
+      "reads": "back-right throughout: ~54 deg right of view in S1-S2, almost behind the tower at the S3 end and in S4"
+    },
+    "lake": {
+      "centre": [
+        242.0,
+        -355.0
+      ],
+      "radii_m": [
+        300.0,
+        120.0
+      ],
+      "rotation_deg": 34.3
+    }
+  },
+  "stacking": {
+    "method": "local Z scale 0->1 from each storey's base pivot (grows out of the one below); Glass_XX trails its frame by 14 frames (~3 storeys)",
+    "start_frames": {
+      "Podium": 124,
+      "Floor_00": 136,
+      "Floor_01": 141,
+      "Floor_02": 146,
+      "Floor_03": 151,
+      "Floor_04": 156,
+      "Floor_05": 161,
+      "Floor_06": 166,
+      "Floor_07": 171,
+      "Floor_08": 176,
+      "Floor_09": 181,
+      "Floor_10": 186,
+      "Floor_11": 191,
+      "Floor_12": 196,
+      "Floor_13": 201,
+      "Floor_14": 206,
+      "Floor_15": 211,
+      "Floor_16": 216,
+      "Floor_17": 221,
+      "Floor_18": 226,
+      "Floor_19": 231,
+      "Floor_20": 236,
+      "Floor_21": 241,
+      "Floor_22": 246,
+      "Floor_23": 251,
+      "Crown": 270
+    },
+    "glass_start_frames": {
+      "Glass_00": 150,
+      "Glass_01": 155,
+      "Glass_02": 160,
+      "Glass_03": 165,
+      "Glass_04": 170,
+      "Glass_05": 175,
+      "Glass_06": 180,
+      "Glass_07": 185,
+      "Glass_08": 190,
+      "Glass_09": 195,
+      "Glass_10": 200,
+      "Glass_11": 205,
+      "Glass_12": 210,
+      "Glass_13": 215,
+      "Glass_14": 220,
+      "Glass_15": 225,
+      "Glass_16": 230,
+      "Glass_17": 235,
+      "Glass_18": 240,
+      "Glass_19": 245,
+      "Glass_20": 250,
+      "Glass_21": 255,
+      "Glass_22": 260,
+      "Glass_23": 265
+    }
+  },
+  "camera_keys": [
+    {
+      "frame": 1,
+      "pos": [
+        -331.33,
+        -10.77,
+        25.7
+      ],
+      "target": [
+        0.0,
+        0.0,
+        26.7
+      ]
+    },
+    {
+      "frame": 51,
+      "pos": [
+        -329.22,
+        -10.8,
+        26.3
+      ],
+      "target": [
+        0.0,
+        0.0,
+        25.7
+      ]
+    },
+    {
+      "frame": 120,
+      "pos": [
+        -323.01,
+        -10.98,
+        29.0
+      ],
+      "target": [
+        0.0,
+        0.0,
+        12.0
+      ]
+    },
+    {
+      "frame": 205,
+      "pos": [
+        -259.64,
+        -13.61,
+        33.0
+      ],
+      "target": [
+        0.0,
+        0.0,
+        30.0
+      ]
+    },
+    {
+      "frame": 288,
+      "pos": [
+        -184.43,
+        -14.51,
+        38.0
+      ],
+      "target": [
+        0.0,
+        0.0,
+        46.0
+      ]
+    },
+    {
+      "frame": 312,
+      "pos": [
+        -179.1,
+        12.83,
+        39.13
+      ],
+      "target": [
+        -0.81,
+        0.01,
+        46.67
+      ]
+    },
+    {
+      "frame": 336,
+      "pos": [
+        -161.49,
+        36.38,
+        42.05
+      ],
+      "target": [
+        -2.9,
+        0.04,
+        48.41
+      ]
+    },
+    {
+      "frame": 360,
+      "pos": [
+        -136.38,
+        53.15,
+        46.05
+      ],
+      "target": [
+        -5.76,
+        0.08,
+        50.78
+      ]
+    },
+    {
+      "frame": 384,
+      "pos": [
+        -108.79,
+        62.53,
+        50.4
+      ],
+      "target": [
+        -8.88,
+        0.12,
+        53.37
+      ]
+    },
+    {
+      "frame": 408,
+      "pos": [
+        -83.21,
+        66.16,
+        54.4
+      ],
+      "target": [
+        -11.73,
+        0.16,
+        55.74
+      ]
+    },
+    {
+      "frame": 432,
+      "pos": [
+        -62.84,
+        67.58,
+        57.32
+      ],
+      "target": [
+        -13.83,
+        0.19,
+        57.48
+      ]
+    },
+    {
+      "frame": 456,
+      "pos": [
+        -48.96,
+        71.73,
+        58.45
+      ],
+      "target": [
+        -14.64,
+        0.2,
+        58.15
+      ]
+    },
+    {
+      "frame": 517,
+      "pos": [
+        -29.68,
+        29.41,
+        58.51
+      ],
+      "target": [
+        -11.55,
+        -2.94,
+        58.25
+      ]
+    },
+    {
+      "frame": 576,
+      "pos": [
+        -17.86,
+        3.48,
+        58.55
+      ],
+      "target": [
+        -8.75,
+        -5.79,
+        58.3
+      ]
+    },
+    {
+      "frame": 637,
+      "pos": [
+        -13.09,
+        -1.37,
+        58.52
+      ],
+      "target": [
+        -6.44,
+        -8.43,
+        58.15
+      ]
+    },
+    {
+      "frame": 696,
+      "pos": [
+        -9.94,
+        -4.58,
+        58.47
+      ],
+      "target": [
+        -6.58,
+        -8.57,
+        58.0
+      ]
+    },
+    {
+      "frame": 816,
+      "pos": [
+        -8.51,
+        -2.75,
+        58.45
+      ],
+      "target": [
+        -5.3,
+        -7.31,
+        57.95
+      ]
+    }
+  ]
+}
