@@ -5,3 +5,13 @@ dist/
 .claude/settings.local.json
 reference/
 assets-src/
+# never commit: local term list for tools/precommit-check.sh
+tools/.blocklist
+# stray copies of reference material
+**/source.mp4
+**/frames/
+# internal Blender motion guides: reproducible via blender/build_guides.py, never published
+blender/guides/*.mp4
+blender/guides/v1/
+__pycache__/
+*.pyc
