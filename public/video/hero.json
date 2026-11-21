@@ -1,0 +1,111 @@
+{
+  "status": "final",
+  "fps": 24,
+  "duration": 39.0,
+  "frames": 936,
+  "width": 1920,
+  "height": 1080,
+  "sources": {
+    "1080": "hero-1080.mp4",
+    "720": "hero-720.mp4",
+    "poster": "hero-poster.webp"
+  },
+  "shots": [
+    {
+      "id": "S1",
+      "name": "RISE",
+      "start": 0.0,
+      "end": 5.5,
+      "cut": 5.25
+    },
+    {
+      "id": "S2",
+      "name": "STACK",
+      "start": 5.0,
+      "end": 12.375,
+      "cut": 12.25
+    },
+    {
+      "id": "S3",
+      "name": "ORBIT",
+      "start": 12.125,
+      "end": 19.5,
+      "cut": 19.458
+    },
+    {
+      "id": "S4",
+      "name": "APPROACH",
+      "start": 19.417,
+      "end": 26.0,
+      "cut": 25.958
+    },
+    {
+      "id": "S5",
+      "name": "THRESHOLD",
+      "start": 25.917,
+      "end": 32.5,
+      "cut": 32.458
+    },
+    {
+      "id": "S6",
+      "name": "DRIFT",
+      "start": 32.417,
+      "end": 39.0,
+      "cut": null
+    }
+  ],
+  "chapters": [
+    {
+      "index": 0,
+      "label": "01 — ÎNCEPUT",
+      "shot": "S1",
+      "start": 0.0,
+      "end": 3.5
+    },
+    {
+      "index": 1,
+      "label": "02 — ETAJE",
+      "shot": "S2",
+      "start": 3.5,
+      "end": 12.125
+    },
+    {
+      "index": 2,
+      "label": "03 — PIATRĂ",
+      "shot": "S3",
+      "start": 12.125,
+      "end": 19.417
+    },
+    {
+      "index": 3,
+      "label": "04 — TERASĂ",
+      "shot": "S4",
+      "start": 19.417,
+      "end": 25.917
+    },
+    {
+      "index": 4,
+      "label": "05 — ACASĂ",
+      "shot": "S5",
+      "start": 25.917,
+      "end": 32.417
+    },
+    {
+      "index": 5,
+      "label": "—",
+      "shot": "S6",
+      "start": 32.417,
+      "end": 39.0
+    }
+  ],
+  "overlay": {
+    "split": [
+      0.11,
+      2.6
+    ],
+    "card": [
+      32.417,
+      39.0
+    ]
+  }
+}
