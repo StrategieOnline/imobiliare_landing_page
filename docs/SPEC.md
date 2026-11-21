@@ -179,3 +179,111 @@ works if the GLB is missing; when `tower.glb` exists it is used instead. Team SE
 - Do not run long-lived dev servers in the foreground; for checks use `npx vite build`, or start `npx vite --port <your port>` in the background
   and kill it when done. Ports: HERO 5101, SECTIONS 5102, RELEASE 5103, JUDGE 5104.
 - When done, write a short handoff at the top of `docs/HANDOFF-<TEAM>.md`: what was built, how to verify, known gaps.
+
+---
+
+## 7. AMENDMENT 1: supersedes §3 copy and settles the open gaps (lead, after the judge's phase-0 review)
+
+The §3 copy was too close to a translation of the reference's English lines. **All copy below replaces the §3 copy.**
+The design grammar is unchanged: CAPS display + `<em>` italic serif tail.
+
+### 7.1 Hero chapters (replace the §3 headline/body columns)
+| # | index label | headline | body |
+|---|---|---|---|
+| 0 | `01 — ÎNCEPUT` | wordmark `ORIZONT` + sub `Rezidențe private în <em>București</em>` | `Patruzeci și șase de case suspendate deasupra parcului Herăstrău.` |
+| 1 | `02 — ETAJE` | `ETAJ CU ETAJ, <em>un reper.</em>` | `Douăzeci și patru de niveluri de sticlă bronz, ridicate între tei și bulevarde.` |
+| 2 | `03 — PIATRĂ` | `TRAVERTIN <em>pe verticală.</em>` | `O dungă de piatră caldă leagă terasele, de la sol până la coroană.` |
+| 3 | `04 — TERASĂ` | `TERASA, <em>a cincea cameră.</em>` | `Fiecare apartament își prelungește livingul afară, la adăpost de vânt, cu priveliștea întreagă.` |
+| 4 | `05 — ACASĂ` | `ACASĂ, <em>deasupra zgomotului.</em>` | `Stejar afumat, piatră mată și lumină ascunsă în tavan. Bulevardul rămâne jos.` |
+| 5 | — | `INTRĂ <em>și simte spațiul.</em>` | buttons: `PROGRAMEAZĂ O VIZITĂ` (pill → `#vizionare`), `VEZI APARTAMENTELE` (ghost → `#rezidente`) |
+Right-side chapter list: `01 ÎNCEPUT · 02 ETAJE · 03 PIATRĂ · 04 TERASĂ · 05 ACASĂ`.
+Ch1 nuance from the reference: the rise reads like a construction time-lapse. The lower floors are fully glazed, and the top 2–3 rising floors show the bare slab/frame and get their glass as the next floor appears.
+
+### 7.2 Sections (replace the §3 copy)
+- NAV CTA pill: `PROGRAMEAZĂ O VIZITĂ`. Links: `01 PROIECTUL` → `#proiectul`, `02 ARHITECTURA` → `#arhitectura`, `03 APARTAMENTE` → `#rezidente`, `04 LOCAȚIE` → `#locatie`; the CTA → `#vizionare`.
+- **1 Manifesto** `id="proiectul"`, label `01 / PROIECTUL`:
+  `Orizont adună 46 de apartamente pe 24 de niveluri, la marginea parcului Herăstrău. Am desenat turnul pornind de la terasă: o încăpere fără pereți, cu lumină pe trei laturi, pe care o are fiecare locuință. Restul — piatra, lemnul, liniștea — vine de la sine.`
+  Stats: `APARTAMENTE 46` · `NIVELURI 24` · `LIVRARE 2028` · `ÎNĂLȚIME 96 m`.
+- **2 Marquee**: unchanged (`TRAVERTIN ✦ BRONZ ✦ STEJAR AFUMAT ✦ STICLĂ ✦ LUMINĂ ✦`).
+- **3 Gestures** `id="arhitectura"`: `TREI IDEI, <em>un singur turn.</em>`
+  - `01 PIATRA` (`tower-exterior.webp`): `Travertinul urcă pe toată fațada și marchează, etaj cu etaj, fiecare terasă.`
+  - `02 TERASA` (`loggia.webp`): `Adâncă de trei metri, ferită de vânt, deschisă spre parc și spre oraș.`
+  - `03 INTRAREA` (`threshold.webp`): `O ușă pivotantă din stejar și un hol de piatră care se deschide spre lumină.`
+- **4 Apartments** `id="rezidente"`: `ALEGE-ȚI <em>înălțimea.</em>` + note `46 de locuințe, între 112 și 480 m²`. Rows:
+  - `01 APARTAMENT CU TERASĂ` — `2–3 CAMERE · 112–160 m² · ETAJELE 4–18` — `res-loggia.webp`
+  - `02 APARTAMENT DE COLȚ` — `3–4 CAMERE · 170–230 m² · ETAJELE 6–20` — `res-corner.webp`
+  - `03 PENTHOUSE` — `5 CAMERE · 320–480 m² · ETAJELE 22–24` — `res-penthouse.webp`
+- **5 Materials**: `STEJAR, TRAVERTIN, <em>umbră caldă.</em>` Body: `Am ales puține materiale și le-am lăsat să îmbătrânească frumos: stejar afumat, travertin neșlefuit, bronz patinat.`
+  Layout: per the reference, the image is **inset with side margins** (gutter on each side, slight radius), not edge-to-edge; it still fills ~100vh and scales 1.15→1.
+- **6 Location** `id="locatie"`: `LÂNGĂ PARC, <em>aproape de tot.</em>`. The address and table are unchanged from §3.
+- **7 Viewing** `id="vizionare"`: `HAI SĂ NE <em>vedem acolo.</em>` (smeared reveal). Body: `Programează o vizită în showroom-ul de pe șantier. Îți arătăm planurile, materialele reale și apartamentele încă disponibile.` Select options: `Apartament cu terasă`, `Apartament de colț`, `Penthouse`, `Încă nu știu`.
+- **8 Footer** legal: `Vizualizările sunt generate digital și au rol de prezentare; nu constituie ofertă contractuală.`
+
+### 7.3 Settled gaps
+- **Seam vs floor rise**: Team 3D splits the seam per storey: `Seam_XX` (and `Loggia_XX`) are **children of `Floor_XX`**, so they rise with their floor. There is no single full-height `Seam` node. Floor pivots: each `Floor_XX` origin sits at that storey's base on the tower's vertical axis (x=0, z=0 in Blender XY).
+- **Budgets**: `tower.glb` ≤ **3 MB** (uncompressed if it fits; otherwise Draco, with the decoder shipped at `public/draco/`), `city.glb` ≤ 1.5 MB.
+  The first view (HTML+JS+CSS+fonts+`hero-rooftop`) is ≤ **3 MB**. The GLB and the ch1–4 plates load lazily after first paint (preloaded in order), and the whole hero is ≤ 8 MB.
+  Image caps: 2560×1440 ≤ 500 KB; 1600×2000 ≤ 400 KB; 1200×1500 ≤ 250 KB; og ≤ 150 KB; all of `public/img` ≤ 6 MB.
+- **Cursor**: Team SECTIONS owns `src/sections/cursor.js` and exposes `window.__cursor = { setState(name) }` with the states `default | link | scroll | view`.
+  The hero calls `window.__cursor?.setState('scroll')` while the pointer is over the hero, and is safe if `__cursor` doesn't exist yet.
+- **Mount order**: HERO mounts before SECTIONS in `src/main.js` (already so). SECTIONS triggers use the default `refreshPriority`; the hero pin uses `refreshPriority: 1`.
+- **Mobile hero**: < 768px, pin ≤ 400vh. **Reduced motion** (hero): no pin; the wordmark + rooftop plate as a static hero; chapters 1–4 as stacked blocks (plate image + headline + body); the 3D tower is shown static in chapter 1's block or omitted.
+
+---
+
+## 8. AMENDMENT 2: the hero becomes a merged, scroll-scrubbed Higgsfield video (user request; supersedes the three.js parts of §3 / §4 / §7)
+
+**User brief:** "Recreate the hero using the concept of building stacking and moving around the building and environments, but as a merged
+video, no raw renders, remove three.js and do edited media through Higgsfield (use the remaining credits). All the elements need to be spatially
+possible, and the motion too."
+
+### 8.1 What changes
+- **three.js is removed from the site.** No WebGL in the hero. `three` leaves package.json; `public/draco/` and `public/models/` leave the site
+  (the GLBs move to `blender/export/` as production files).
+- The hero is **one continuous video** that the scroll scrubs (frame-accurate, both directions), with the existing DOM overlay system on top:
+  the wordmark split, chapter headlines with mask-in/blur-out, HUD (crop marks, TC timecode, chapter list, ⊙), and the ch5 canvas→card shrink (now on the video wrapper).
+- **No raw renders on screen.** Blender output is used ONLY as a *motion/geometry guide* that Higgsfield edits into photoreal footage.
+  Every frame the visitor sees comes out of a Higgsfield generation/edit, graded and merged by us.
+- **Spatially possible**: one physically continuous camera through one coherent world: no teleporting, no morphing buildings, a constant tower
+  design (MEDIA's `tower-exterior.webp` silhouette: dark bronze glass, a narrow travertine corner band filled with loggias, a mid-height shift), consistent sun
+  (low, back-right) and dusk grade across all shots. Floors stack physically (each floor comes down onto or rises onto the one below, as in a time-lapse), never pop out of thin air in mid-sky.
+
+### 8.2 Shot list (one camera, cut points on identical frames; 24 fps; total ≈ 30–40 s)
+| shot | ≈ s | camera | content | chapter / copy (§7.1) |
+|---|---|---|---|---|
+| S1 RISE | 5 | on a rooftop terrace (parapet, olive planters), rises over the parapet and tilts slightly down to the city | dusk, north-Bucharest low-rise, the empty plot ahead | ch0 wordmark → ch1 |
+| S2 STACK | 7 | slow push toward the plot with a gentle arc | **the tower stacks floor by floor**, bottom→top, construction time-lapse (a bare frame at the top 2–3 floors, glass following), finishing with the crown | ch1 `ETAJ CU ETAJ, un reper.` |
+| S3 ORBIT | 7 | orbits ~90–120° around the finished tower while rising to mid-height | moving around the building; the city and the Herăstrău lake behind; ends framing the travertine band | ch2 `TRAVERTIN pe verticală.` |
+| S4 APPROACH | 5 | dollies straight into one loggia until it fills the frame | stone returns, glass balustrade, warm living room beyond | ch3 `TERASA, a cincea cameră.` |
+| S5 THRESHOLD | 5 | passes through the open sliding glass into the living room | the interior matches `interior-living.webp` | ch4 `ACASĂ, deasupra zgomotului.` |
+| S6 DRIFT | 5 | slow lateral drift in the living room (the card shrink plays over this) | blue-hour window, practicals on | ch5 `INTRĂ și simte spațiul.` |
+
+### 8.3 Pipeline and ownership
+1. **Team 3D: motion guides** (`blender/guides/`): one Blender scene and one continuous camera animation covering S1–S6. The tower (with the round-2 seam)
+   with keyframed floor stacking, `city.glb`-style context, a rooftop blockout for S1, a simple but correctly scaled loggia + living-room blockout matching
+   `loggia.webp` / `interior-living.webp` for S4–S6, a dusk world, the sun back-right. Render each shot as an MP4 guide at 1280×720 24 fps (EEVEE, readable shading,
+   lit windows), plus PNGs of each shot's first and last frames, plus `guides.json` (shot → frame range, camera notes). The guide shots overlap by 12 frames
+   at each cut, for crossfades. Reproducible via `blender/build_guides.py`. Guides are never published to the site.
+2. **Team VIDEO (the former MEDIA): Higgsfield edit + merge** (`assets-src/video/`, the final output in `public/video/`): per shot, a video-to-video edit of the guide
+   (candidates: `kling_video_edit` (Kling 3.0 Omni Edit), `seedance_2_5` mode `video_edit`, `gemini_omni_flash_1_2` mode `edit`) with image references from
+   `public/img/` so that the look matches our approved plates. Pilot one shot on 2 models first and pick by spatial fidelity (geometry and camera preserved), then do the rest.
+   Fallback per shot: photoreal keyframes (image edits of the guide's first/last frames with references) → first/last-frame image-to-video
+   (`flux_3_video`, `minimax_h3`, `seedance_2_5` omni_reference with start/end). Merge with ffmpeg: grade match, 12-frame crossfades at cuts, no audio.
+   Deliver `public/video/hero-1080.mp4` (1920×1080) and `public/video/hero-720.mp4` (1280×720), H.264 High, `-g 6 -bf 0 -pix_fmt yuv420p -movflags +faststart`,
+   no audio track, ≤ 25 MB / ≤ 10 MB; `public/video/hero-poster.webp` (first frame); `public/video/hero.json` (duration, fps, frame count, shot/chapter time ranges).
+   **Credits: up to 600** (the account has ~655; keep ≥ 50 in reserve). Log every job in `docs/ASSETS.md ## VIDEO`.
+3. **Team HERO: video-scrub hero** (`src/hero/**`): remove all three.js code. Fetch the video as a blob (so seeking never waits on the network), use
+   `<video muted playsinline preload="auto">`, map scroll progress → target time, ease `currentTime` toward the target in rAF (and use requestVideoFrameCallback where available),
+   720p under 768px wide or on saveData, the poster until it's ready, with a loading progress bar in the HUD. The chapter ranges come from `hero.json`. Keep and adapt all overlays.
+   Until the real video lands, use a local placeholder video stitched with ffmpeg from the existing plates (`assets-src/video/placeholder.mp4`, not published),
+   same filenames/JSON shape. Reduced motion: poster + stacked chapter blocks (plates), no scrubbing.
+4. **JUDGE**: adds rubric items: spatial plausibility per shot (frame-step the merged video: no morphing, popping, scale jumps or design drift of the tower; the floors stack physically),
+   seamless cuts, a consistent grade, scrub smoothness (no stutter seeking forwards or backwards at 1080p), and file budgets.
+5. **RELEASE**: removes `three` from deps (lead approves), drops `public/models` + `public/draco` from the build, makes sure `public/video/*` deploys (GitHub file limit 100 MB).
+
+### 8.4 User rule: no panned stills (added after Amendment 2)
+"Don't pan the image; generate the scene with Higgsfield for each scene." **Every second of hero footage is a Higgsfield video generation or edit.**
+No Ken-Burns, pan, zoom or crossfade-of-stills anywhere in the shipped hero, and none as a fallback either. If a shot's video-to-video edit fails, the fallback is
+another Higgsfield generation (first/last-frame image-to-video, omni-reference, video extension), never an animated still.
+The ffmpeg placeholder (panned plates) is for local testing only, must never be committed or deployed, and is deleted once the real cut lands.
+Crossfades are allowed only between two Higgsfield video clips at the 12-frame overlaps.
