@@ -1,3 +1,9 @@
+> **Repo depreciat din 23 noiembrie 2026.** Landing-ul trăiește acum în
+> [`StrategieOnline/imobiliare_demo`](https://github.com/StrategieOnline/imobiliare_demo), în `apps/site`,
+> sub numele **Upstream Residence**, la https://imobiliare.strategieonline.ro.
+> Acest repo rămâne doar pentru istoric și pentru sursele asset-urilor (Blender, [docs/ASSETS.md](docs/ASSETS.md)).
+> Nu se mai lucrează aici.
+
 # ORIZONT — Rezidențe private în București
 
 A scroll-driven, cinematic landing page for ORIZONT, a fictional luxury residential tower in

@@ -1,3 +1,8 @@
+> **Depreciat (23 nov 2026).** Landing-ul e în `imobiliare_demo/apps/site`. Pagina GitHub Pages a acestui repo
+> trebuie să fie doar redirecționarea din `docs/index.html` către https://imobiliare.strategieonline.ro
+> (Pages: ramura `main`, folderul `/docs`). Nu mai rula `tools/deploy.sh`: ar publica din nou vechea pagină.
+> Restul acestui document descrie starea de dinainte de depreciere.
+
 # Deploy
 
 The site is a static Vite build served by GitHub Pages from the `gh-pages` branch.
